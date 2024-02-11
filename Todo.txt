@@ -7,5 +7,5 @@
 * Add a ciphertext message to the puzzle page (Aaron)
 * Add a Key text box (Aaron)
 * Add a decrypt button (Brock)
-* Add some way to change the text on screen, have working decryption if possible (Brock)
+* Add some way to change the text on screen that is triggered by pressing decrypt button. In final product it will return the output of the decryption but for now it just needs to display different text. (Brock)
 * Create an OBS recording of functionality to explain in presentation (Aaron)

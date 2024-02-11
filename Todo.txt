@@ -8,3 +8,4 @@
 * Add a Key text box
 * Add a decrypt button
 * Add some way to change the text on screen, have working decryption if possible
+* Create an OBS recording of functionality to explain in presentation

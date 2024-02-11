@@ -1,11 +1,11 @@
-* Import Index from Emily
-* Modify Index to fit the project name
-* Write puzzle description and instructions on that page
-* Add translate button that connects with the NLP
-* Add a puzzle html page 
-* Add a menu to navigate between the two pages
-* Add a ciphertext message to the puzzle page
-* Add a Key text box
-* Add a decrypt button
-* Add some way to change the text on screen, have working decryption if possible
-* Create an OBS recording of functionality to explain in presentation
+* Import Index from Emily (Emily)
+* Modify Index to fit the project (Emily)
+* Write puzzle description and instructions on that page (Aaron)
+* Add translate button that connects with the NLP if possible. If it wont work, fake it somehow (Emily)
+* Add a puzzle html page (Sergio)
+* Add a menu to navigate between the two pages (Sergio)
+* Add a ciphertext message to the puzzle page (Aaron)
+* Add a Key text box (Aaron)
+* Add a decrypt button (Brock)
+* Add some way to change the text on screen, have working decryption if possible (Brock)
+* Create an OBS recording of functionality to explain in presentation (Aaron)

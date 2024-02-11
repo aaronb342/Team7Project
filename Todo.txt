@@ -1,0 +1,10 @@
+* Import Index from Emily
+* Modify Index to fit the project name
+* Write puzzle description and instructions on that page
+* Add translate button that connects with the NLP
+* Add a puzzle html page 
+* Add a menu to navigate between the two pages
+* Add a ciphertext message to the puzzle page
+* Add a Key text box
+* Add a decrypt button
+* Add some way to change the text on screen, have working decryption if possible

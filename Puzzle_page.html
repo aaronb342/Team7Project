@@ -6,6 +6,11 @@
     <title>Puzzle Page</title>
     <!-- Link to the main.css stylesheet -->
     <link rel="stylesheet" href="main.css">
+    <script>
+        function decrypt(){
+            document.getElementById('PUZZLE').innerHTML = "THIS IS THE DECRYPTED STUFF";
+        }
+    </script>
 </head>
 <body>
 
@@ -27,6 +32,12 @@
         <p>Example cipher</p>
         <!-- Text box for puzzle input -->
         <input type="text" class="text-input" placeholder="Type your answer here...">
+        <label for="Ciphers">Select a cipher:</label>
+            <select name="ciphers" id="ciphers">
+                <option value="rot13">rot13</option>
+                <option value="caesar">Caesar</option>
+            </select>
+        <button onclick="decrypt()">Decrypt</button>
     </div>
 
     <!-- Output Box -->
@@ -35,6 +46,8 @@
         <!-- Plaintext for decrypted text -->
         <p>Hint: (button)</p>
         <p>Decrypted text</p>
+        <p id="PUZZLE">THIS IS THE PUZZLE (will be encrypted)</p>
+        
     </div>
 </div>
 </body>

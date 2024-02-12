@@ -1,0 +1,90 @@
+/* main.css */
+
+/* Body styles */
+body {
+    background-color: #f0f0f0; 
+    margin: 0; 
+    text-align: center; 
+}
+
+/* Container styles */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 100px; 
+    margin-left: 50px; 
+}
+
+/* Box styles */
+.box {
+    width: 45%;
+    height: 300px;
+    border: 2px solid black;
+    padding: 20px;
+    overflow: auto;
+    background-color: white; 
+}
+
+/* Header styles */
+h1 {
+    font-weight: bold; 
+    text-align: center; 
+    padding: 10px 20px; 
+    margin-bottom: 20px; 
+    background-color: #555; 
+    color: white; 
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    display: inline-block; 
+}
+
+/* Nav menu styles */
+nav {
+    position: fixed; 
+    left: 0; 
+    top: 0; 
+    background-color: #333; 
+    width: 70px; 
+    height: 100vh;
+    transition: width 0.3s; 
+    z-index: 1;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+/* Nav menu hover styles */
+nav:hover {
+    width: 150px;
+}
+
+/* Nav menu list styles */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+/* Nav menu styles */
+nav a {
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+}
+
+/* Nav menu hover styles */
+nav a:hover {
+    background-color: #555; 
+}
+
+/* Text input styles */
+.text-input {
+    width: calc(100% - 40px); 
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    box-sizing: border-box; 
+}

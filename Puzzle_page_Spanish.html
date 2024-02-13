@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puzzle Page</title>
+    <title>La Página de Rompecabezas</title>
     <!-- Link to the main.css stylesheet -->
     <link rel="stylesheet" href="main.css">
     <script>
@@ -16,37 +16,37 @@
 
 <nav>
     <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="puzzle_page.html">Puzzle Page</a></li>
-        <li><a href="#">More Info</a></li>
+        <li><a href="Spanish.html">Casa</a></li>
+        <li><a href="Puzzle_page_Spanish.html">La Página de Rompecabezas</a></li>
+        <li><a href="#"> Más información</a></li>
     </ul>
 </nav>
 
-<h1>Puzzle Page</h1> <!-- Bold header -->
+<h1>La Página de Rompecabezas</h1> <!-- Bold header -->
 
 <div class="container">
     <!-- Puzzle Box -->
     <div class="box" id="puzzle-box">
-        <h2>Puzzle 1</h2>
+        <h2>Rompecabezas 1</h2>
         <!-- Cipher text -->
-        <p>Example cipher</p>
+        <p>Ejemplo de cifrado</p>
         <!-- Text box for puzzle input -->
-        <input type="text" class="text-input" placeholder="Type your answer here...">
-        <label for="Ciphers">Select a cipher:</label>
+        <input type="text" class="text-input" placeholder="Pon tu respuesta aquí...">
+        <label for="Ciphers">Seleccionar un cifrado:</label>
             <select name="ciphers" id="ciphers">
                 <option value="rot13">rot13</option>
                 <option value="caesar">Caesar</option>
             </select>
-        <button onclick="decrypt()">Decrypt</button>
+        <button onclick="decrypt()">Descifrar</button>
     </div>
 
     <!-- Output Box -->
     <div class="box" id="output-box">
-        <h2>Answer</h2>
+        <h2>Repuesta</h2>
         <!-- Plaintext for decrypted text -->
-        <p>Hint: (button)</p>
-        <p>Decrypted text</p>
-        <p id="PUZZLE">THIS IS THE PUZZLE (will be encrypted)</p>
+        <p> La Pista (botón)</p>
+        <p>Texto descifrado</p>
+        <p id="PUZZLE">ESTE ES EL ROMPECABEZAS (estará encriptado)</p>
         
     </div>
 </div>

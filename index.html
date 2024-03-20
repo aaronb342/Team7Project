@@ -14,6 +14,16 @@
 		document.getElementById('PUZZLE').innerHTML = "THIS IS THE DECRYPTED STUFF";
 	}
 </script>
+
+<script>
+	function translateSpanish(){
+		from transformers import pipeline
+                model_checkpoint = "Helsinki-NLP/opus-mt-en-es"
+                translator = pipeline("translation", model=model_checkpoint)
+		text = document.getElementByTag('title', 'body')
+                translator(text)
+	}
+</script>
 	 
 </head>
 
@@ -34,8 +44,8 @@
 <p id="PUZZLE">THIS IS THE PUZZLE (will be encrypted)</p>
 <p></p>
 
-
-<br><a href="Spanish.html">Spanish</a></br>
+<button onclick="translateSpanish()">Spanish</button>
+//<br><a href="Spanish.html">Spanish</a></br>
 <button onclick="decrypt()">Decrypt</button>
 
 <footer>

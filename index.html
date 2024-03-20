@@ -20,7 +20,7 @@
 		from transformers import pipeline
                 model_checkpoint = "Helsinki-NLP/opus-mt-en-es"
                 translator = pipeline("translation", model=model_checkpoint)
-		text = document.getElementByTag('title', 'body')
+		text = document.getElementByTagName('title', 'body')
                 translator(text)
 	}
 </script>

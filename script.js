@@ -18,12 +18,26 @@ function updateText() {
     // Encode the text using Caesar Cipher for now
    
     const encodedText = caesarCipher(puzzleText, key);
+
+    output.innerHTML = "";
     
     // Update the text content
-    outputElement.textContent = encodedText;
+    printLetterByLetter("output", encodedText, 100);
   }
-  
-  function caesarCipher(text, key) {
+
+function printLetterByLetter(destination, message, speed){
+    var i = 0;
+    var interval = setInterval(function(){
+        document.getElementById(destination).innerHTML += message.charAt(i);
+        i++;
+        if (i > message.length){
+            clearInterval(interval);
+        }
+    }, speed);
+}
+
+
+function caesarCipher(text, key) {
       let encoded = "";
     for (let i = 0; i < text.length; i++) {
       let char = text.charAt(i);

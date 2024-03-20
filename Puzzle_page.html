@@ -24,7 +24,7 @@
     <div class="box" id="puzzle-box">
         <h2>Puzzle 1</h2>
         <!-- Cipher text -->
-        <div id ="puzzleText">Example cipher</div>
+        <div id ="puzzleText">Jcfruqj hnumjw</div>
         <!-- Text box for puzzle input -->
         <input type="text" id="key" class="text-input" placeholder="Type your answer here...">
         <label for="Ciphers">Select a cipher:</label>
@@ -44,14 +44,36 @@
         <p id="output">THIS IS THE PUZZLE (will be encrypted)</p>
     </div>
 
-    <div class="box" id="shmeep-shmop">
-        <h2>Hint</h2>
+    <div class="box" id="hintBox">
+        <span class="hint"></span>
 
-        <button id="hint">Show Hint</button>
+        <button id="hintButton" onclick="showHint()">Show Hint</button>
+        <br>
     </div>
 
 </div>
-
+<script>
+    const hintBox = document.getElementById("hintBox");
+    const hintsList = [
+        "Hail Caesar!",
+        "I = 1, V = 5, X = 10",
+        "What's nine plus ten(not 19)"
+    ];
+    let currentHintIndex = 0;
+    function showHint() {
+        if (currentHintIndex < hintsList.length) {
+            const hintEl = document.createElement('span');
+            hintEl.classList.add('hint');
+            hintEl.textContent = hintsList[currentHintIndex];
+            hintBox.appendChild(hintEl);
+            const blankLine = document.createElement('br');
+            hintBox.appendChild(blankLine);
+            currentHintIndex++;
+        } else {
+            alert("No more hints available!");
+        }
+    }
+</script>
 <script src="./script.js"></script>
 </body>
 </html>

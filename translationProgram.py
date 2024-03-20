@@ -36,66 +36,28 @@ src_text = np.genfromtxt("data.txt", dtype=str, encoding=None, delimiter=".")
 
 file1.close() 
 
- 
- 
+#language = input("Multiple languages for translation are available. Enter Ukrainian, Russian or Armenian. (Case Sensitive)")  
 
-# uncomment to type in individual sentences and phrases. 
+#model_name = "blank" 
 
-#src_text = [ 
+#if language == "Ukrainian": 
 
-#    ">>es<< Hi, my name's Kronos, and my life is kinda crazy."" 
+model_name = "Helsinki-NLP/opus-mt-en-uk" 
 
-#] 
+#elif language =="Russian": 
 
- 
- 
+ # model_name = "Helsinki-NLP/opus-mt-en-ru" 
 
-# Also downloaded are Helsinki-NLP/opus-mt-en-uk, Helsinki-NLP/opus-mt-en-sla, Helsinki-NLP/opus-mt-en-ROMANCE, Helsinki-NLP/opus-mt-en-uk, Helsinki-NLP/opus-mt-en-trk 
+#elif language =="Armenian": 
 
-# Uncomment to see the very poor Greek translation. 
-
-# model_name = "Helsinki-NLP/opus-mt-en-grk" 
-
- 
- 
-
-language = input("Multiple languages for translation are available. Enter Ukrainian, Russian or Armenian. (Case Sensitive)") 
-
- 
- 
-
-model_name = "blank" 
-
- 
- 
-
-if language == "Ukrainian": 
-
-  model_name = "Helsinki-NLP/opus-mt-en-uk" 
-
-elif language =="Russian": 
-
-  model_name = "Helsinki-NLP/opus-mt-en-ru" 
-
-elif language =="Armenian": 
-
-  model_name = "Helsinki-NLP/opus-mt-en-hy" 
-
- 
+ # model_name = "Helsinki-NLP/opus-mt-en-hy" 
  
 
 for x in src_text: 
 
- 
- 
-
   #model_name = "Helsinki-NLP/opus-mt-en-uk" 
 
-  tokenizer = MarianTokenizer.from_pretrained(model_name) 
-
- 
- 
- 
+  tokenizer = MarianTokenizer.from_pretrained(model_name)  
 
   model = MarianMTModel.from_pretrained(model_name) 
 
@@ -104,8 +66,5 @@ for x in src_text:
   translated = model.generate(**tokenizer(x, return_tensors="pt", padding=True)) 
 
   tgt_text = [tokenizer.decode(t, skip_special_tokens=True) for t in translated] 
-
- 
- 
 
   print(tgt_text) 

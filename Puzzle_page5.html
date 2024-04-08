@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Page</title>
+	
+	 
+    <!-- Link to the main.css stylesheet -->
+    <link rel="stylesheet" href="main.css">  
+   <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+		
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="puzzle_page.html">Puzzle 1</a></li>
+        <li><a href="puzzle_page2.html">Puzzle 2</a></li>
+        <li><a href="puzzle_page3.html">Puzzle 3</a></li>
+        <li><a href="puzzle_page4.html">Puzzle 4</a></li>
+        <li><a href="puzzle_page5.html">Final Puzzle</a></li>
+        <li><a href="#">More Info</a></li>
+    </ul>
+</nav>
+
+<h1>Puzzle Page</h1> <!-- Bold header -->
+
+<div class="container">
+    <!-- Puzzle Box -->
+    <div class="box" id="puzzle-box">
+        <h2>Puzzle 1</h2>
+        <!-- Cipher text -->
+        <div id ="puzzleText">Jsopq Zstzg!</div>
+        <!-- Text box for puzzle input -->
+        <input type="text" id="key" class="text-input" placeholder="Type your answer here...">
+        <label for="Ciphers">Select a cipher:</label>
+            <select name="ciphers" id="ciphers">
+                <option value="rot13">rot13</option>
+                <option value="caesar">Caesar</option>
+                <option value="vigenere">Vigenere</option>
+            </select>
+        <button onclick="updateText()">Decrypt</button>
+    </div>
+
+    <!-- Output Box -->
+    <div class="box" id="output-box">
+        <h2>Answer</h2>
+        <!-- Plaintext for decrypted text -->
+        <p>Hint: (button)</p>
+        <p>Output:</p>
+        <p id="output">THIS IS THE PUZZLE (will be encrypted)</p>
+    </div>
+
+    <div class="box" id="hintBox">
+        <span class="hint"></span>
+
+        <button id="hintButton" onclick="showHint()">Show Hint</button>
+        <br>
+    </div>
+
+</div>
+<script>
+    const hintBox = document.getElementById("hintBox");
+    const hintsList = [
+        "Hail Caesar!",
+        "I = 1, V = 5, X = 10",
+        "What's nine plus ten(not 19)"
+    ];
+    let currentHintIndex = 0;
+    function showHint() {
+        if (currentHintIndex < hintsList.length) {
+            const hintEl = document.createElement('span');
+            hintEl.classList.add('hint');
+            hintEl.textContent = hintsList[currentHintIndex];
+            hintBox.appendChild(hintEl);
+            const blankLine = document.createElement('br');
+            hintBox.appendChild(blankLine);
+            currentHintIndex++;
+        } else {
+            alert("No more hints available!");
+        }
+    }
+</script>
+<script src="./script.js"></script>
+</body>
+	
+</html>

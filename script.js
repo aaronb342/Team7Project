@@ -4,16 +4,32 @@ function updateText() {
     const puzzleText = puzzleElement.textContent;
     const keyElement = document.getElementById('key');
     const outputElement = document.getElementById('output');
-
+    const cipher = document.getElementById('ciphers');
+    let selectedcipher = cipher.value;
+    let key;
     // Get key
     //const text = userInput.value;
-    const key = parseInt(keyElement.value);
+    let encodedText = "";
     
-    // Validate that key is a number
-    if (isNaN(key)) {
-      alert("Please enter a valid number for key value!");
-      return;
+    
+    if(selectedcipher == 'caesar'){
+      key = parseInt(keyElement.value);
+      // Validate that key is a number, this cipher takes numbers only
+        if (isNaN(key)) {
+          alert("Please enter a valid number for key value!");
+            return;
+      }
+      encodedText = caesarCipher(puzzleText, key);
     }
+     //rot13 doesn't actually take any user input, just runs caesar with a preset input  
+    else if(selectedcipher == 'rot13'){
+        encodedText = caesarCipher(puzzleText, 13);
+    }
+    //vigenere will take a word or set of numbers as input
+    else if(selectedcipher == 'vigenere'){
+        key = keyElement.value;
+        encodedText = vigenereCipher(puzzleText,key);
+     }
     
     // Encode the text using Caesar Cipher for now
    
@@ -60,3 +76,41 @@ function caesarCipher(text, key) {
     }
     return encoded;
   }
+function isLetter (str) {
+  return str.length === 1 && str.match(/[a-zA-Z]/i)
+}
+ 
+//tests letter for case so shift can be adjusted accordingly
+function isUpperCase (character) {
+  if (character === character.toUpperCase()) {
+    return true
+  }
+  if (character === character.toLowerCase()) {
+    return false
+  }
+}
+ 
+function vigenereCipher (message, key) {
+  console.log(key);
+  let result = '';
+ 
+  for (let i = 0, j = 0; i < message.length; i++) {
+    const c = message.charAt(i); //test each char (i), increments to next char in message each run
+    if (isLetter(c)) { //prevents other chars and numbers from being modified
+      
+      //shifts current char correct number of spaces for current key char, starts at ascii code 90 for uppercase, 122 for lowercase.
+      if (isUpperCase(c)) {
+        result += String.fromCharCode(90 - (25 - (c.charCodeAt(0) - key.toUpperCase().charCodeAt(j))) % 26); //key char changed to uppercase if messagechar is uppercase
+      } else {
+        result += String.fromCharCode(122 - (25 - (c.charCodeAt(0) - key.toLowerCase().charCodeAt(j))) % 26); //key char changed to lowercase if messagechar is lowercase
+      }
+    }
+    //does not do anything to numbers and symbols, just adds them to the result string
+    else {
+      result += c;
+    }
+    //increment to next char in key before next message char is processed
+    j = ++j % key.length;
+  }
+  return result;
+}

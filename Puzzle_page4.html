@@ -41,7 +41,7 @@ function googleTranslateElementInit() {
     <div class="box" id="puzzle-box">
         <h2>Puzzle 1</h2>
         <!-- Cipher text -->
-        <div id ="puzzleText">Jsopq Zstzg!</div>
+        <div id ="puzzleText">Trowuskxmqwafqt, qfx sustnft lyh bdkk dyszvu! Wzv oual svpcdv ji lyh bdkk pdh!</div>
         <!-- Text box for puzzle input -->
         <input type="text" id="key" class="text-input" placeholder="Type your answer here...">
         <label for="Ciphers">Select a cipher:</label>
@@ -49,6 +49,7 @@ function googleTranslateElementInit() {
                 <option value="rot13">rot13</option>
                 <option value="caesar">Caesar</option>
                 <option value="vigenere">Vigenere</option>
+		<option value="secret">Secret Cipher</option>
             </select>
         <button onclick="updateText()">Decrypt</button>
     </div>
@@ -73,9 +74,11 @@ function googleTranslateElementInit() {
 <script>
     const hintBox = document.getElementById("hintBox");
     const hintsList = [
-        "Hail Caesar!",
-        "I = 1, V = 5, X = 10",
-        "What's nine plus ten(not 19)."
+        "This cipher is [REDACTED]",
+        "try (number),(letters)",
+        "1 is the loneliest number",
+        "The secret word is secret! I can't tell you it!",
+        "There is only 1,secret here"
     ];
     let currentHintIndex = 0;
     function showHint() {

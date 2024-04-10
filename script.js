@@ -9,32 +9,27 @@ function updateText() {
     let key;
     // Get key
     //const text = userInput.value;
+    
+    
+    // Validate that key is a number
+    
     let encodedText = "";
-    
-    
-    if(selectedcipher == 'caesar'){
+
+   if(selectedcipher == 'caesar'){
       key = parseInt(keyElement.value);
-      // Validate that key is a number, this cipher takes numbers only
-        if (isNaN(key)) {
-          alert("Please enter a valid number for key value!");
-            return;
+      if (isNaN(key)) {
+      alert("Please enter a valid number for key value!");
+      return;
       }
       encodedText = caesarCipher(puzzleText, key);
-    }
-     //rot13 doesn't actually take any user input, just runs caesar with a preset input  
-    else if(selectedcipher == 'rot13'){
-        encodedText = caesarCipher(puzzleText, 13);
-    }
-    //vigenere will take a word or set of numbers as input
-    else if(selectedcipher == 'vigenere'){
-        key = keyElement.value;
-        encodedText = vigenereCipher(puzzleText,key);
-     }
-    
-    // Encode the text using Caesar Cipher for now
-   
-    const encodedText = caesarCipher(puzzleText, key);
-
+   }
+   else if(selectedcipher == 'rot13'){
+    encodedText = caesarCipher(puzzleText, 13);
+   }
+   else if(selectedcipher == 'vigenere'){
+    key = keyElement.value;
+    encodedText = vigenereCipher(puzzleText,key);
+   }
     output.innerHTML = "";
     
     // Update the text content
@@ -76,6 +71,8 @@ function caesarCipher(text, key) {
     }
     return encoded;
   }
+
+  //tests to make sure that symbols and numbers are not shifted
 function isLetter (str) {
   return str.length === 1 && str.match(/[a-zA-Z]/i)
 }
@@ -114,3 +111,4 @@ function vigenereCipher (message, key) {
   }
   return result;
 }
+ 

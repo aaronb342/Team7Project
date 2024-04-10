@@ -41,7 +41,7 @@ function googleTranslateElementInit() {
     <div class="box" id="puzzle-box">
         <h2>Puzzle 1</h2>
         <!-- Cipher text -->
-        <div id ="puzzleText">Jcfruqj hnumjw</div>
+        <div id ="puzzleText">Gung jnf rnfl! Gur Ebg13 Pvcure vf zber yvxr rapbqvat guna rapelcgvba orpnhfr vg nyjnlf unf gur fnzr xrl, hayvxr gur arkg pvcure.</div>
         <!-- Text box for puzzle input. -->
         <input type="text" id="key" class="text-input" placeholder="Type your answer here...">
         <label for="Ciphers">Select a cipher:</label>
@@ -73,9 +73,11 @@ function googleTranslateElementInit() {
 <script>
     const hintBox = document.getElementById("hintBox");
     const hintsList = [
-        "Hail Caesar!",
-        "I = 1, V = 5, X = 10",
-        "What's nine plus ten(not 19)"
+        "This cipher does not need a key",
+        "The English alphabet has 26 letters, this cipher cuts it in half",
+        "This cipher ROTates letters",
+	"Which cipher works if the key is blank?",
+	"Try ROT13 with your favorite number""
     ];
     let currentHintIndex = 0;
     function showHint() {

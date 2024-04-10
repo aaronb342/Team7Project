@@ -30,6 +30,12 @@ function updateText() {
     key = keyElement.value;
     encodedText = vigenereCipher(puzzleText,key);
    }
+    else if(selectedcipher == 'secret'){
+    key = keyElement.value;
+    let keySet = key.split(",");
+    let partialDecode = caesarCipher(puzzleText,keySet[0]);
+    encodedText = vigenereCipher(partialDecode,keySet[1]);
+   }
     output.innerHTML = "";
     
     // Update the text content

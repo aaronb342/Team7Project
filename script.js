@@ -1,3 +1,8 @@
+
+//console.log(vigenereCipher("Uspxvtlynrxbgru, rgy tvtuogu mzi cell eztawv! Xaw pvbm twqdew kj mzi cell qei!","secret"));
+//console.log(caesarCipher("Uspxvtlynrxbgru, rgy tvtuogu mzi cell eztawv! Xaw pvbm twqdew kj mzi cell qei!",25));
+//console.log(caesarCipher("Trowuskxmqwafqt, qfx sustnft lyh bdkk dyszvu! Wzv oual svpcdv ji lyh bdkk pdh!",1));
+//console.log(caesarCipher("Uspxvtlynrxbgru! Psn uvctoxv xjv jbfen gysrpg! Klbk twqdew acj jbjwv vrvjcrkiw omvy e Oakgeikw Gkglxj, xjvr mzev tmizitkiql acj iguvagxxv akkl t Uegjek Umryik.",25));
 function updateText() {
     // Get the input elements
     const puzzleElement = document.getElementById('puzzleText');
@@ -30,11 +35,18 @@ function updateText() {
     key = keyElement.value;
     encodedText = vigenereCipher(puzzleText,key);
    }
-    else if(selectedcipher == 'secret'){
+   else if(selectedcipher == 'secret'){
     key = keyElement.value;
+    const regex = /^(\d+),([a-zA-Z]+)$/;
+    if(!regex.test(key)){
+      alert("Please enter valid key format!");
+      return;
+    }
     let keySet = key.split(",");
-    let partialDecode = caesarCipher(puzzleText,keySet[0]);
-    encodedText = vigenereCipher(partialDecode,keySet[1]);
+
+    let partialDecode = caesarCipher(puzzleText,parseInt(keySet[0]));
+    alert(partialDecode);
+    encodedText = vigenereCipher(partialDecode,"secret");
    }
     output.innerHTML = "";
     
@@ -107,6 +119,7 @@ function vigenereCipher (message, key) {
       } else {
         result += String.fromCharCode(122 - (25 - (c.charCodeAt(0) - key.toLowerCase().charCodeAt(j))) % 26); //key char changed to lowercase if messagechar is lowercase
       }
+      
     }
     //does not do anything to numbers and symbols, just adds them to the result string
     else {
@@ -117,4 +130,22 @@ function vigenereCipher (message, key) {
   }
   return result;
 }
+function encrypt (message, key) {
+  let result = ''
  
+  for (let i = 0, j = 0; i < message.length; i++) {
+    const c = message.charAt(i)
+    if (isLetter(c)) {
+      if (isUpperCase(c)) {
+        result += String.fromCharCode((c.charCodeAt(0) + key.toUpperCase().charCodeAt(j) - 2 * 65) % 26 + 65) // A: 65
+      } else {
+        result += String.fromCharCode((c.charCodeAt(0) + key.toLowerCase().charCodeAt(j) - 2 * 97) % 26 + 97) // a: 97
+      }
+      
+    } else {
+      result += c
+    }
+    j = ++j % key.length;
+  }
+  return result
+}

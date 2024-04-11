@@ -108,9 +108,12 @@ function checkCorrect(){
     else if((page.textContent == "Puzzle 3") && (selectedcipher == 'vigenere') && (key == 'code')){
         generateConfetti();
         }
-      else if((page.textContent == "Puzzle 4") && (selectedcipher == 'Secret Cipher') && (key == '1,secret')){
+           else if((page.textContent == "Puzzle 4") && (selectedcipher == 'secret') && (key == '1,secret')){
         generateConfetti();
       }
+      else if((page.textContent == "Final Puzzle") && (selectedcipher == 'secret') && (key == '1,ring')){
+          burstConfetti();
+        }
                                                                                           
     else{
       attempts++;
@@ -247,4 +250,32 @@ function randomColor() {
       color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
+}
+
+function burstConfetti() {
+    document.getElementById("confettiSound").play();
+    const confettiContainer = document.getElementById('confetti-container');
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    // Create 100 confetti particles
+    for (let i = 0; i < 200; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti2'
+        confetti.style.backgroundColor = randomColor();
+        confetti.style.animationDelay = Math.random() * 3 + 's';
+        confettiContainer.appendChild(confetti);
+        const angle = Math.random() * Math.PI * 2; // Random angle in radians
+        const distance = Math.random() * 1000; // Maximum distance from center
+        const posX = centerX + Math.cos(angle) * distance;
+        const posY = centerY + Math.sin(angle) * distance;
+        confetti.style.left = posX + 'px';
+        confetti.style.top = posY + 'px';
+        confetti.style.animation = `fanOut 3s ease forwards`;
+        confetti.addEventListener('animationend', () => {
+            confetti.remove();
+        });
+
+        // Remove confetti after animation completes
+    }
 }

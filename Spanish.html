@@ -14,7 +14,12 @@
 		document.getElementById('PUZZLE').innerHTML = "THIS IS THE DECRYPTED STUFF";
 	}
 </script>
-	 
+
+<audio id="clickSound">
+	<source src="bright_button_click.mp3" type="audio/mpeg">
+	Your browser does not support the audio element.
+</audio>
+	
 </head>
 
 <body>
@@ -37,7 +42,7 @@
 
 
 <br><a href="index.html">Traducir al inglés</a></br>
-<button onclick="decrypt()">Descifrar</button>
+<button onclick="decrypt(); document.getElementById('clickSound').play()">Descifrar</button>
 
 <footer>
 <p>Copyright &copy; 2024 Aaron Brown, Emily Fasano, Sergio Gaud, Brock Kern</p>

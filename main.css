@@ -7,6 +7,7 @@ body {
     margin: 0; 
     text-align: center; 
     color: #301934;
+    outline-color: white;
 }
 
 /* Container styles */

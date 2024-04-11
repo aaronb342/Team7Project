@@ -24,6 +24,7 @@ function updateText() {
  if(selectedcipher == 'caesar'){
     key = parseInt(keyElement.value);
     if (isNaN(key)) {
+    document.getElementById("errorSound").play();
     alert("Please enter a valid number for key value!");
     return;
     }
@@ -40,6 +41,7 @@ function updateText() {
   key = keyElement.value;
   const regex = /^(\d+),([a-zA-Z]+)$/;
   if(!regex.test(key)){
+    document.getElementById("errorSound").play();
     alert("Please enter valid key format!");
     return;
   }
@@ -69,6 +71,7 @@ function checkCorrect(){
       //alert("checking caesar");
         key = parseInt(keyElement.value);
         if (isNaN(key)) {
+            document.getElementById("errorSound").play();
             alert("Please enter a valid number for key value!");
             return;
         }
@@ -85,6 +88,7 @@ function checkCorrect(){
         key = keyElement.value;
         const regex = /^(\d+),([a-zA-Z]+)$/;
         if(!regex.test(key)){
+            document.getElementById("errorSound").play();
             alert("Please enter valid key format!");
             return;
         }

@@ -42,11 +42,11 @@ function googleTranslateElementInit() {
 </nav>
 
 <h1>Puzzle Page</h1> <!-- Bold header -->
-
+<div id="confetti-container"></div>
 <div class="container">
     <!-- Puzzle Box -->
     <div class="box" id="puzzle-box">
-        <h2>Puzzle 1</h2>
+        <h2 id="identifier">Puzzle 1</h2>
         <!-- Cipher text -->
         <div id ="puzzleText">Gung jnf rnfl! Gur Ebg13 Pvcure vf zber yvxr rapbqvat guna rapelcgvba orpnhfr vg nyjnlf unf gur fnzr xrl, hayvxr gur arkg pvcure.</div>
         <!-- Text box for puzzle input. -->
@@ -57,7 +57,7 @@ function googleTranslateElementInit() {
                 <option value="caesar">Caesar</option>
 		<option value="vigenere">Vigenere</option>
             </select>
-        <button onclick="updateText(); document.getElementById('clickSound').play()">Decrypt</button>
+        <button onclick="updateText(); checkCorrect(); document.getElementById('clickSound').play()">Decrypt</button>
     </div>
 
     <!-- Output Box -->

@@ -34,7 +34,12 @@ function googleTranslateElementInit() {
 </script>
 
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-	 
+
+<audio id="clickSound">
+  <source src="bright_button_click.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+	
 </head>
 
 <body>
@@ -58,8 +63,8 @@ function googleTranslateElementInit() {
 <p id="PUZZLE">THIS IS THE PUZZLE (will be encrypted)</p>
 <p></p>
 
-<button onclick="translateSpanish()">Spanish</button>
-<button onclick="decrypt()">Decrypt</button>
+<button onclick="translateSpanish(); document.getElementById('clickSound').play()">Spanish</button>
+<button onclick="decrypt(); document.getElementById('clickSound').play()">Decrypt</button>
 <br><a href="Spanish.html">Spanish</a></br>
 <footer>
 <p>Copyright &copy; 2024 Aaron Brown, Emily Fasano, Sergio Gaud, Brock Kern</p>

@@ -47,7 +47,7 @@ function updateText() {
 
   let partialDecode = caesarCipher(puzzleText,parseInt(keySet[0]));
   alert(partialDecode);
-  encodedText = vigenereCipher(partialDecode,"secret");
+  encodedText = vigenereCipher(partialDecode,keySet[1]);
  }
   output.innerHTML = "";
 
@@ -91,7 +91,7 @@ function checkCorrect(){
         let keySet = key.split(",");
         let partialDecode = caesarCipher(puzzleText,parseInt(keySet[0]));
         alert(partialDecode);
-        encodedText = vigenereCipher(partialDecode,"secret");
+        encodedText = vigenereCipher(partialDecode,keySet[1]);
     }
 
     

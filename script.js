@@ -219,7 +219,7 @@ return result
 }
 
 function generateConfetti() {
-  
+  document.getElementById("confettiSound").play();
   const container = document.getElementById('confetti-container');
 
   for (let i = 0; i < 50; i++) {

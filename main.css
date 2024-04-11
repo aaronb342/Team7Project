@@ -8,6 +8,8 @@ body {
     text-align: center; 
     color: white;
     outline-color: white;
+    font-weight: bold; 
+    font-family: papyrus, fantasy;
 }
 
 /* Container styles */

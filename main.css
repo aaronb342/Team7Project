@@ -34,7 +34,8 @@ h1 {
     text-align: center; 
     padding: 10px 20px; 
     margin-bottom: 20px; 
-    background-color: #555; 
+    /*background-color: #555; */
+    background-color: #b80201;
     color: white; 
     border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 

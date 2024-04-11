@@ -22,7 +22,10 @@ function googleTranslateElementInit() {
     <source src="bright_button_click.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>	
-		
+<audio id="errorSound">
+    <source src="error_sound.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>		
 </head>
 <body>
 
@@ -96,6 +99,10 @@ function googleTranslateElementInit() {
 		// play the click sound
             document.getElementById("clickSound").play();
         } else {
+	// Increment currentHintIndex one last time to trigger sound
+        currentHintIndex++;
+        // Play the sound
+	document.getElementById("errorSound").play();
             alert("No more hints available!");
         }
     }

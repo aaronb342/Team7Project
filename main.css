@@ -8,8 +8,9 @@ body {
     text-align: center;
     color: white;
     /*outline-color: white;*/
-    font-weight: bold; 
+  /*  font-weight: bold; */
     font-family: "Fantasy";
+    font-style: italic;
 }
 
 /* Container styles */

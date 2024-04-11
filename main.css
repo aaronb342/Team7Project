@@ -87,8 +87,8 @@ nav a {
 
 /* Nav menu hover styles */
 nav a:hover {
-   /* background-color: #555; */
-    background-color: #301934;
+    background-color: #555; 
+   /* background-color: #301934;*/
 }
 
 /* Text input styles */

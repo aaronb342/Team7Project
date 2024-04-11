@@ -105,9 +105,13 @@ function checkCorrect(){
     else if((page.textContent == "Puzzle 2") && (selectedcipher == 'caesar') && (key == '21')){
     generateConfetti();
     }
-    else if((page.textContent == "Puzzle 3") && (selectedcipher == 'vigenere') && (key = 'code')){
+    else if((page.textContent == "Puzzle 3") && (selectedcipher == 'vigenere') && (key == 'code')){
         generateConfetti();
         }
+      else if((page.textContent == "Puzzle 4") && (selectedcipher == 'Secret Cipher') && (key == '1,secret')){
+        generateConfetti();
+      }
+                                                                                          
     else{
       attempts++;
       // alert(attempts);

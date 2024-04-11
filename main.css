@@ -168,3 +168,23 @@ nav a:hover {
     z-index: 9999; /* Set a high z-index to ensure it's rendered above other elements */
     pointer-events: none; /* Ensure that the confetti container does not block interactions with other elements */
 }
+
+
+.confetti2 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+@keyframes fanOut {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+

@@ -36,7 +36,8 @@ h1 {
     margin-bottom: 20px; 
     /*background-color: #555; */
     background-color: #b80201;
-    color: white; 
+   /* color: white; */
+    color: #301934;
     border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
     display: inline-block; 

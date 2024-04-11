@@ -14,10 +14,10 @@ function updateText() {
     let key;
     // Get key
     //const text = userInput.value;
-    
-    
+
+
     // Validate that key is a number
-    
+
     let encodedText = "";
 
    if(selectedcipher == 'caesar'){
@@ -49,9 +49,59 @@ function updateText() {
     encodedText = vigenereCipher(partialDecode,"secret");
    }
     output.innerHTML = "";
-    
+
     // Update the text content
-    printLetterByLetter("output", encodedText, 100);
+    printLetterByLetter("output", encodedText, 50);
+
+  }
+
+  function checkCorrect(){
+      const cipher = document.getElementById('ciphers');
+      let selectedcipher = cipher.value;
+      const page = document.getElementById('identifier');
+      const keyElement = document.getElementById('key');
+      let key;
+
+      let encodedText = "";
+
+      if(selectedcipher == 'caesar'){
+          key = parseInt(keyElement.value);
+          if (isNaN(key)) {
+              alert("Please enter a valid number for key value!");
+              return;
+          }
+          encodedText = caesarCipher(puzzleText, key);
+      }
+      else if(selectedcipher == 'rot13'){
+          encodedText = caesarCipher(puzzleText, 13);
+      }
+      else if(selectedcipher == 'vigenere'){
+          key = keyElement.value;
+          encodedText = vigenereCipher(puzzleText,key);
+      }
+      else if(selectedcipher == 'secret'){
+          key = keyElement.value;
+          const regex = /^(\d+),([a-zA-Z]+)$/;
+          if(!regex.test(key)){
+              alert("Please enter valid key format!");
+              return;
+          }
+          let keySet = key.split(",");
+          let partialDecode = caesarCipher(puzzleText,parseInt(keySet[0]));
+          alert(partialDecode);
+          encodedText = vigenereCipher(partialDecode,"secret");
+      }
+
+
+          if((page.textContent == "Puzzle 1") && (selectedcipher == 'rot13')){
+          generateConfetti();
+      }
+      else if((page.textContent == "Puzzle 2") && (selectedcipher == 'caesar') && (key == '21')){
+      generateConfetti();
+      }
+      else if((page.textContent == "Puzzle 3") && (selectedcipher == 'vigenere') && (key = 'code')){
+          generateConfetti();
+          }
   }
 
 function printLetterByLetter(destination, message, speed){
@@ -148,4 +198,26 @@ function encrypt (message, key) {
     j = ++j % key.length;
   }
   return result
+}
+
+function generateConfetti() {
+    const container = document.getElementById('confetti-container');
+
+    for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.backgroundColor = randomColor();
+        confetti.style.left = Math.random() * container.offsetWidth + 'px';
+        confetti.style.animationDelay = Math.random() * 3 + 's';
+        container.appendChild(confetti);
+    }
+}
+
+function randomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }

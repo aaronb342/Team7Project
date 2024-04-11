@@ -105,7 +105,7 @@ function checkCorrect(){
         generateConfetti();
         }
     else{
-      // attempts++;
+      attempts++;
       // alert(attempts);
       if(attempts >= 20){
         if(page.textContent == "Puzzle 1"){

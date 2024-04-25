@@ -8,15 +8,15 @@
 	 
     <!-- Link to the main.css stylesheet. -->
     <link rel="stylesheet" href="main.css">  
-<div id="google_translate_element"></div>
+<div id="translate"></div>
 
 <script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+function translatePage() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'translate');
 }
 </script>
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=translatePage"></script>
 
 <audio id="clickSound">
     <source src="bright_button_click.mp3" type="audio/mpeg">
